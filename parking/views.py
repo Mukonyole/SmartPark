@@ -189,9 +189,9 @@ def complaint(request):
     #params = {'name': 'parking', 'place': 'mars'}
     #return render(request,'complaint.html', params)
 
-def fare(request):
+def fee(request):
     params = {'name': 'parking', 'place': 'mars'}
-    return render(request,'fare.html', params)
+    return render(request,'fee.html', params)
 
 def home(request):
     params = {'name': 'parking', 'place': 'mars'}
@@ -216,7 +216,7 @@ def vehicleexit(request):
         vty = request.POST['vty']
         tno = request.POST['tno']
         outtime = t2
-        feem = 0
+        fee = 0
         FMT = '%H:%M:%S'
         tdiff = datetime.strptime(t2, FMT) - datetime.strptime(t1, FMT)
         user = Vehicleentry()
@@ -227,28 +227,28 @@ def vehicleexit(request):
         if len(user)>0:
             if vty == 'two':
                 if tdiff <= tc1:
-                    feem = 50
+                    fee = 50
                 elif tdiff <= tc2:
-                    feem = 70
+                    fee = 70
                 elif tdiff > tc2:
-                    feem = 100
+                    fee = 100
             elif vty == 'three':
                 if tdiff <= tc1:
-                    feem = 50
+                    fee = 50
                 elif tdiff <= tc2:
-                    feem = 100
+                    fee = 100
                 elif tdiff > tc2:
-                    feem = 150
+                    fee = 150
             elif vty == 'four':
                 if tdiff <= tc1:
-                    feem = 150
+                    fee = 150
                 elif tdiff <= tc2:
-                    feem = 200
+                    fee = 200
                 elif tdiff > tc2:
-                    feem = 250
+                    fee = 250
             else:
-                farem = 0
-            exitt = Vehicleexit(vno=vno,vty=vty,outtime=outtime,feem=feem,tno=tno)
+                fee = 0
+            exitt = Vehicleexit(vno=vno,vty=vty,outtime=outtime,fee=fee,tno=tno)
             exitt.save()
             return HttpResponse('<h2>Vehicle found in the parking lot.</h2><br><span style="font-size:25px" class="psw"> Print <a href="/printexit/" style="color:blue" style="font-size:30px">Recipt</a></span>')
         else:
@@ -298,3 +298,4 @@ def printvehicles(request):
 def searchingveh(request,vnumber):
     obj = Vehicleentry.objects.get(vnumber=vnumber)
     return render(request, 'searchingveh.html', {'obj': obj})
+
