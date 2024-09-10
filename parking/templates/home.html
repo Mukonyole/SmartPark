@@ -66,7 +66,6 @@ header .banner-text {
 
 }
 
-
 .w3-animate-zoom {animation:animatezoom 0.6s} @keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
 
 
@@ -117,7 +116,7 @@ header .banner-text {
 }
 
 body{
-  background:lightblue;
+  background:rgb(4, 25, 32);
   text-align:center;
   box-sizing:border-box;
   font-family:"Lato",Sans-serif;
@@ -163,6 +162,13 @@ body{
   animation:comeFromBottom 1s ease-out .8s;
 }
 
+.topright {
+  position: absolute;
+  top: -50px;
+  right: -400px;
+  font-size: 40px;
+  color: rgb(172, 158, 170);
+}
 .btn::after{
   content:"";
   text-decoration: none;
@@ -202,15 +208,18 @@ body{
 <body>
   <header>
     <video loop muted autoplay playsinline>
-        <source src="https://www.getmyparking.com/src/gmp-video-720.mp4" type="video/mp4" />
+    
     </video>
     <div class="banner">
        <div class="banner-text">
        
           <div class="section">
 
+<h2>Welcome to SmartPark!</h2>
+<P>Finding the perfect parking spot has never been easier. With SmartPark, your parking experience is now seamless, efficient, and reliable. Book your parking spot in advance and enjoy peace of mind.
 
-           <h3 class="w3-container w3-center w3-animate-zoom" style="font-size:50px" >SmartPark: Parking Booking</h3>
+  Start your journey stress-free with SmartPark – your smart parking solution</P>
+           <h3 class="w3-container w3-center w3-animate-zoom" style="font-size:35px" >SmartPark: Parking Booking</h3>
 
 
           </div><br><br>
@@ -220,6 +229,7 @@ body{
           <a href="/index/" style="margin-top:210px;" class="btn btn-white btn-animation-1">LOGIN</a> <a href="/signup/" style="margin-left:2em;" class="btn btn-white btn-animation-1">SIGNUP</a> <br><br><br>
           <a href="/contactus/" class="btn btn-white btn-animation-1">Contact us</a>   <a href="complaint" style="margin-left:2em;" class="btn btn-white btn-animation-1">Complaints</a> <br><br><br>
           <a href="/aboutus/" class="btn btn-white btn-animation-1">About us</a>   <a href="/maps/" style="margin-left:2em;"  class="btn btn-white btn-animation-1">Maps</a>
+          <a><div class="topright">SMARTPARK</div></a>
         </div>
         </div>
        </div>
@@ -227,3 +237,4 @@ body{
   </header>
 </body>
 </html>
+
