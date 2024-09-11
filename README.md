@@ -1,4 +1,3 @@
-SmartPark
 SmartPark is a parking slot booking system designed to help users easily find and reserve parking spaces. The application allows users to search for available parking spots, view details, and book a spot in advance, all through a user-friendly interface.
 
 Table of Contents
