@@ -14,17 +14,10 @@ body, html {
 }
 
 .bg-image {
-
   background-image: url("https://login.gov/assets/img/login-gov-288x288.png");
-
-
   filter: blur(8px);
   -webkit-filter: blur(8px);
-
-
   height: 92%;
-
-
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -32,22 +25,22 @@ body, html {
 .bg-heading {
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0, 0);
-    color: white;
-   font-family: Verlag,museo-sans,'Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: white;
+  font-family: Verlag,museo-sans,'Helvetica Neue',Helvetica,Arial,sans-serif;
   position: absolute;
-  top: 15%;
-  left: 59%;
+  top: 30%;
+  left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
   width: 70%;
-  height: 40%
+  height: 40%;
   text-align: center;
 }
 .bg-text {
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0, 0.6);
   font-weight: bold;
-   font-family: "Helvetica", Times, serif;
+  font-family: "Helvetica", Times, serif;
   border: 3px solid #708090;
   color: white;
   border-radius: 25px;
@@ -116,7 +109,7 @@ span.psw {
 .registerbtn {
   background-color: #4169E1;
   color: white;
-border-radius: 25px;
+  border-radius: 25px;
   padding: 16px 20px;
   margin: 8px 0;
   border: none;
@@ -130,16 +123,15 @@ hr {
   margin-bottom: 25px;
 }
 
-
 .registerbtn:hover {
   opacity: 1;
 }
 
 .topright {
   position: absolute;
-  top: 6px;
+  top: -1px;
   right: 10px;
-  font-size: 30px;
+  font-size: 1px;
 }
 
 </style>
@@ -148,39 +140,34 @@ hr {
 <div class="topnav">
   <a class="active" href="/">Home</a>
   <a href="/maps">Map</a>
-    <a href="/fee">Parking fee</a>
+  <a href="/fee">Parking fee</a>
   <a href="/contactus">Contact us</a>
-    <a href="/aboutus">About us</a>
-    <a href="/complaint">Complaint</a>
+  <a href="/aboutus">About us</a>
+  <a href="/complaint">Complaint</a>
   <a href="/signup/">SignUp</a>
-    <a><div class="topright">SMARTPARK</div></a>
+  <a><div class="topright">SMARTPARK</div></a>
+  <a class="topright" style="font-size: xx-large; font-style: normal; font-family: 'Times New Roman', Times, serif; color: #f2f2f2;" >SMARTPARK</a>
 </div>
 
 <div class="bg-image"></div>
-     <div class="bg-heading">
-        <h2 style="font-size:50px">SmartPark: Parking Booking</h2>
-     </div>
+<div class="bg-heading">
+  <h2 style="font-size:50px">SmartPark: Parking Booking</h2>
+</div>
+
 <div class="bg-text">
-  <h1 style="font-size:35px; font-family:helvetica;"> Log In </h1>
-     <hr>
-<form action=" " method="post">
+  <!-- CSRF token included for form security -->
+  <form method="POST" action="/login/">
+    {% csrf_token %}
+    <h1 style="font-size:35px; font-family:helvetica;"> Log In </h1>
+    <hr>
     <h2 style="font-size:25px; padding-bottom:0px;">Username </h2>
-    <input type="text" style="font-size:20px; border-radius: 25px; " name="username"><br>
-    <h2 style="font-size:25px; padding-bottom:0px;">Password  </h2>
-    <input type="password" style="font-size:20px;border-radius: 25px;" name="password"><br><br>
+    <input type="text" style="font-size:20px; border-radius: 25px;" name="username" required><br>
+    <h2 style="font-size:25px; padding-bottom:0px;">Password </h2>
+    <input type="password" style="font-size:20px; border-radius: 25px;" name="password" required><br><br>
     <input class="registerbtn" type="submit" style="font-size:15px" value="Login">
     <br><br>
-    <span style="font-size:25px" class="psw"> Forgot <a href="/forgot/" style="color:yellow" style="font-size:30px">Password?</a></span>
-</form>
-    <br>
-    <div class="form-group">
-            <div class="messages">
-
-                    <div class="alert alert-success" style="color:red;"></div>
-
-            </div>
-        </div>
-
+    <span style="font-size:25px" class="psw"> Forgot <a href="/forgot/" style="color:yellow">Password?</a></span>
+  </form>
 </div>
 </body>
 </html>

@@ -21,4 +21,5 @@ path('printcomplaint/', views.printcomplaint, name='printcomplaint'),
 path('adminpage/', views.adminpage, name='adminpage'),
 path('printvehicles/', views.printvehicles, name='printvehicles'),
 path('searchingveh/<vnumber>', views.searchingveh, name='searchingveh'),
+path('login/', views.login_view, name='login'),
 ]

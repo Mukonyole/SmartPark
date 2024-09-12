@@ -299,3 +299,14 @@ def searchingveh(request,vnumber):
     obj = Vehicleentry.objects.get(vnumber=vnumber)
     return render(request, 'searchingveh.html', {'obj': obj})
 
+def login_view(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return HttpResponse("Login successful")
+        else:
+            return HttpResponse("Invalid login credentials")
+    return render(request, 'login.html')
